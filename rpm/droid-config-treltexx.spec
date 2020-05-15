@@ -4,8 +4,8 @@
 %define device treltexx
 %define vendor samsung
 
-%define vendor_pretty Galaxy Note4
-%define device_pretty Samsung
+%define vendor_pretty Samsung
+%define device_pretty Galaxy Note 4
 
 # Community HW adaptations need this
 %define community_adaptation 1
@@ -21,6 +21,8 @@
 
 # We assume most devices will
 %define have_modem 1
+
+Provides: ofono-configs
 
 %include droid-configs-device/droid-configs.inc
 
