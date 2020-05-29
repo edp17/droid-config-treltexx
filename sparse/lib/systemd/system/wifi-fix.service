@@ -4,8 +4,8 @@ After=connman.service
 Before=network.target
 
 [Service]
-Type=simple
-ExecStart=/usr/bin/droid/wifiFix-edp17.sh
+Type=oneshot
+ExecStart=/usr/bin/droid/wifi-fix.sh
 ##Restart=on-error
 
 [Install]

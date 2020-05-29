@@ -2,9 +2,9 @@
 
 wifiStatusWas="off"
 # get wifi status
-wvar1=`/usr/bin/connmanctl state | grep State`
-wvar2=${wvar1:9}
-wStatus=`echo "$wvar2" | xargs`
+#wvar1=`/usr/bin/connmanctl state | grep State`
+#wvar2=${wvar1:9}
+wStatus=`cat /wifi-prev-status | xargs`
 
 echo "Wifi status: $wStatus"
 
@@ -60,4 +60,4 @@ then
 echo "Wifi turned back ON"
 fi
 
-echo "wifiFix-edp17.sh script done."
+echo "wifi-fix.sh script done."
