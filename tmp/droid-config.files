@@ -101,10 +101,9 @@
 /usr/local/bin/locate
 /usr/local/bin/xargs
 /usr/local/bin/updatedb
-/etc/modprobe.d/dhd.conf
+/etc/mce/60-battery-udev-devices.ini
 /etc/ofono/ril_subscription.conf
 /etc/sysconfig/connman
-/etc/modules-load.d/dhd.conf
 /var/lib/environment/compositor/droid-hal-device.conf
 /var/lib/environment/ofono/noplugin.conf
 /lib/systemd/system/local-fs.target.wants/android.mount
