@@ -1,0 +1,7 @@
+CPUCHECK_STRING="Exynos 5433 TRELTEXX"
+
+PART_1="boot"
+
+PART_REAL_1="mmcblk0p9"
+
+PART_I="1"
