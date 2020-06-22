@@ -1,0 +1,11 @@
+[Unit]
+Description=Save MAC address before it changes
+After=connman.service
+Before=network-pre.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/droid/wifi-getMAC.sh
+
+[Install]
+WantedBy=multi-user.target
