@@ -1,0 +1,2 @@
+### module-droid-card
+load-module module-droid-card rate=44000 config=/etc/pulse/treltexx_audio_policy.conf
