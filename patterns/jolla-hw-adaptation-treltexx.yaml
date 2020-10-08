@@ -73,6 +73,10 @@ Requires:
 # For GPS
 - geoclue-provider-hybris
 
+# For Bluetooth
+- bluetooth-rfkill-event-hciattach
+- broadcom-bluetooth-bluez5
+
 # For FM radio on some QCOM devices
 #- qt5-qtmultimedia-plugin-mediaservice-irisradio
 #- jolla-mediaplayer-radio

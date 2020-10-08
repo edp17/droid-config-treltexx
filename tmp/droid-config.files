@@ -54,6 +54,7 @@
 /usr/share/applications/sailfish-browser-YouTube-0.desktop
 /usr/share/applications/sailfish-browser-Telegram-0.desktop
 /usr/share/applications/sailfish-browser-ProtonMail-0.desktop
+/usr/share/ssu/features.d/mousetracker.ini
 /usr/libexec/droid-hybris/system/etc/init/racoon.rc
 /usr/libexec/droid-hybris/system/etc/init/gatekeeperd.rc
 /usr/libexec/droid-hybris/system/etc/init/vold.rc
@@ -87,7 +88,11 @@
 /usr/lib/mozembedlite/chrome/embedlite/content/ixquick.xml
 /usr/lib/mozembedlite/chrome/embedlite/content/swisscows.xml
 /usr/bin/droid/wifi-tidy.sh
+/usr/bin/droid/gps-fix.sh
 /usr/bin/droid/wifi-save-status.sh
+/usr/bin/droid/lxc-scripts/debian-mouse-landscape.sh
+/usr/bin/droid/lxc-scripts/debian-mouse-portrait.sh
+/usr/bin/droid/lxc-scripts/debian.sh
 /usr/bin/droid/wifi-fix.sh
 /usr/bin/droid/wifi-getMAC.sh
 /usr/bin/logcat

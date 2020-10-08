@@ -18,6 +18,7 @@ repo --name=apps-@RELEASE@ --baseurl=https://releases.jolla.com/jolla-apps/@RELE
 repo --name=customer-jolla-@RELEASE@ --baseurl=https://releases.jolla.com/features/@RELEASE@/customers/jolla/@ARCH@/
 repo --name=hotfixes-@RELEASE@ --baseurl=https://releases.jolla.com/releases/@RELEASE@/hotfixes/@ARCH@/
 repo --name=jolla-@RELEASE@ --baseurl=https://releases.jolla.com/releases/@RELEASE@/jolla/@ARCH@/
+repo --name=mousetracker-@RELEASE@ --baseurl=http://repo.merproject.org/obs/home:/elros34:/sailfishapps/sailfishos_@RELEASE@/
 
 %packages
 @Jolla Configuration treltexx
