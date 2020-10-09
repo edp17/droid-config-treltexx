@@ -88,11 +88,7 @@
 /usr/lib/mozembedlite/chrome/embedlite/content/ixquick.xml
 /usr/lib/mozembedlite/chrome/embedlite/content/swisscows.xml
 /usr/bin/droid/wifi-tidy.sh
-/usr/bin/droid/gps-fix.sh
 /usr/bin/droid/wifi-save-status.sh
-/usr/bin/droid/lxc-scripts/debian-mouse-landscape.sh
-/usr/bin/droid/lxc-scripts/debian-mouse-portrait.sh
-/usr/bin/droid/lxc-scripts/debian.sh
 /usr/bin/droid/wifi-fix.sh
 /usr/bin/droid/wifi-getMAC.sh
 /usr/bin/logcat
