@@ -77,9 +77,6 @@ Requires:
 - bluetooth-rfkill-event-hciattach
 - broadcom-bluetooth-bluez5
 
-# For mousetracker
-- mousetracker
-
 # For FM radio on some QCOM devices
 #- qt5-qtmultimedia-plugin-mediaservice-irisradio
 #- jolla-mediaplayer-radio
