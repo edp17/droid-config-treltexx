@@ -1,19 +1,20 @@
 #!/bin/bash
 
 echo "wifi-fix.sh script - START"
-cd /home/.system/var/lib/connman/
+cd /home/defaultuser/.local/share/system/privileged/connman/
 dirCount=`ls -l | grep wifi | grep -c ^d`
 
 # if more than 1 wifi* directory, remove them
 if [ $dirCount != "1" ]
 then
   echo "More wifi* directories - removing all"
-  rm -rf /home/.system/var/lib/connman/wifi*
+  rm -rf /home/defaultuser/.local/share/system/privileged/connman/wifi*
   echo "Switching wifi off"
-  /usr/bin/connmantcl disable wifi
+  /usr/bin/connmanctl disable wifi
   echo "Wifi is off"
+  echo "Please toggle the wifi on again and enter the password!"
 else
-  # /home/.system/var/lib/connman directory is clean
+  # /home/defaultuser/.local/share/system/privileged/connman/ directory is clean
   # proceeding with preparation for turning the wifi on
   wifiStatusWas="off"
   # get wifi status
@@ -40,8 +41,8 @@ else
   cMac=`cat /wifi-mac | xargs`
   echo "MAC address: $cMac"
 
-  # create wifi_*_managed_psk dir in /home/.system/var/lib/connman/
-  cd /home/.system/var/lib/connman/
+  # create wifi_*_managed_psk dir in /home/defaultuser/.local/share/system/privileged/connman/
+  cd /home/defaultuser/.local/share/system/privileged/connman/
   oldDir=`ls -d */ | grep wifi`
   oldDirLastBit=${oldDir:17}
   dirFirst='wifi_'

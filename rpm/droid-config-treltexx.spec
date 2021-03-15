@@ -23,8 +23,11 @@
 %define have_modem 1
 
 Provides: ofono-configs
+Obsoletes: ofono-configs-mer
 
 %include droid-configs-device/droid-configs.inc
+%include patterns/patterns-sailfish-device-adaptation-treltexx.inc
+%include patterns/patterns-sailfish-device-configuration-treltexx.inc
 
 # IMPORTANT if you want to comment out any macros in your .spec, delete the %
 # sign, otherwise they will remain defined! E.g.:

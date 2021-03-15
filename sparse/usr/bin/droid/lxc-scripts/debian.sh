@@ -28,7 +28,7 @@ if [[ $1 != "" ]]; then
       echo "Step 1. Done"
   fi
   echo "Step 2."
-  echo "Starting qxdisplay as nemo..."
+  echo "Starting qxdisplay as defaultuser..."
   `/usr/bin/qxdisplay --wayland-socket-name "../../display/wayland-container-0"` &
   sleep 2
   echo "Attach the container $1 as root..."

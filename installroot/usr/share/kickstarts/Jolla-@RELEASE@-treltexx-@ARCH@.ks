@@ -18,10 +18,9 @@ repo --name=apps-@RELEASE@ --baseurl=https://releases.jolla.com/jolla-apps/@RELE
 repo --name=customer-jolla-@RELEASE@ --baseurl=https://releases.jolla.com/features/@RELEASE@/customers/jolla/@ARCH@/
 repo --name=hotfixes-@RELEASE@ --baseurl=https://releases.jolla.com/releases/@RELEASE@/hotfixes/@ARCH@/
 repo --name=jolla-@RELEASE@ --baseurl=https://releases.jolla.com/releases/@RELEASE@/jolla/@ARCH@/
-repo --name=mousetracker-@RELEASE@ --baseurl=http://repo.merproject.org/obs/home:/elros34:/sailfishapps/sailfishos_@RELEASE@/
 
 %packages
-@Jolla Configuration treltexx
+patterns-sailfish-device-configuration-treltexx
 %end
 
 %attachment
@@ -33,17 +32,17 @@ repo --name=mousetracker-@RELEASE@ --baseurl=http://repo.merproject.org/obs/home
 
 %end
 
-%pre
+%pre --erroronfail
 export SSU_RELEASE_TYPE=release
 ### begin 01_init
 touch $INSTALL_ROOT/.bootstrap
 ### end 01_init
 %end
 
-%post
+%post --erroronfail
 export SSU_RELEASE_TYPE=release
 ### begin 01_arch-hack
-if [ "@ARCH@" == armv7hl ] || [ "@ARCH@" == armv7tnhl ]; then
+if [ "@ARCH@" == armv7hl ] || [ "@ARCH@" == armv7tnhl ] || [ "@ARCH@" == aarch64 ]; then
     # Without this line the rpm does not get the architecture right.
     echo -n "@ARCH@-meego-linux" > /etc/rpm/platform
 
@@ -115,7 +114,7 @@ psCheckAccessDeleted = no
 ### end 90_zypper_skip_check_access_deleted
 %end
 
-%post --nochroot
+%post --nochroot --erroronfail
 export SSU_RELEASE_TYPE=release
 ### begin 50_os-release
 (
@@ -126,9 +125,31 @@ cat $INSTALL_ROOT/etc/os-release
 echo "SAILFISH_CUSTOMER=\"${CUSTOMERS//$'\n'/ }\""
 ) > $IMG_OUT_DIR/os-release
 ### end 50_os-release
+### begin 99_check_shadow
+IS_BAD=0
+
+echo "Checking that no user has password set in /etc/shadow."
+# This grep prints users that have password set, normally nothing
+if grep -vE '^[^:]+:[*!]{1,2}:' $INSTALL_ROOT/etc/shadow
+then
+    echo "A USER HAS PASSWORD SET! THE IMAGE IS NOT SAFE!"
+    IS_BAD=1
+fi
+
+# Checking that all users use shadow in passwd,
+# if they weren't the check above would be useless
+if grep -vE '^[^:]+:x:' $INSTALL_ROOT/etc/passwd
+then
+    echo "BAD PASSWORD IN /etc/passwd! THE IMAGE IS NOT SAFE!"
+    IS_BAD=1
+fi
+
+# Fail image build if checks fail
+[ $IS_BAD -eq 0 ] && echo "No passwords set, good." || exit 1
+### end 99_check_shadow
 %end
 
-%pack
+%pack --erroronfail
 export SSU_RELEASE_TYPE=release
 ### begin hybris
 pushd $IMG_OUT_DIR

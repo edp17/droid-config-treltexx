@@ -1,0 +1,11 @@
+[Unit]
+Description=Start S-Pen listener
+After=connman.service
+
+[Service]
+Type=oneshot
+ExecStart=/sbin/runuser -l nemo -c /usr/bin/droid/spen-daemon.sh &
+Restart=on-error
+
+[Install]
+WantedBy=multi-user.target
