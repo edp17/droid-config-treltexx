@@ -88,12 +88,16 @@
 /usr/lib/systemd/system/wifi-fix.service
 /usr/lib/systemd/system/multi-user.target.wants/wifi-mac.service
 /usr/lib/systemd/system/multi-user.target.wants/wifi-fix.service
+/usr/lib/systemd/system/multi-user.target.wants/spen.service
+/usr/lib/systemd/system/spen.service
 /usr/bin/droid/wifi-tidy.sh
+/usr/bin/droid/evtest
 /usr/bin/droid/gps-fix.sh
 /usr/bin/droid/wifi-save-status.sh
 /usr/bin/droid/lxc-scripts/debian-mouse-landscape.sh
 /usr/bin/droid/lxc-scripts/debian-mouse-portrait.sh
 /usr/bin/droid/lxc-scripts/debian.sh
+/usr/bin/droid/spen-daemon.sh
 /usr/bin/droid/wifi-fix.sh
 /usr/bin/droid/wifi-getMAC.sh
 /usr/bin/logcat

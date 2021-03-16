@@ -23,7 +23,7 @@ Requires: libhybris-tests
 Requires: busybox-static
 Requires: openssh-server
 Requires: zypper
-Requires: psmisc-tools
+#this is for sfos4.0 Requires: psmisc-tools
 
 
 Requires: sailfish-content-graphics-z%{icon_res}
