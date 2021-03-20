@@ -4,7 +4,7 @@ After=connman.service
 
 [Service]
 Type=oneshot
-ExecStart=/sbin/runuser -l nemo -c /usr/bin/droid/spen-daemon.sh &
+ExecStart=/usr/bin/droid/spen-start-service.sh
 Restart=on-error
 
 [Install]

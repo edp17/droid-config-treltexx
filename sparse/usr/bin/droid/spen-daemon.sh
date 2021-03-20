@@ -13,31 +13,34 @@
 #  GNU General Public License for more details.
 #
 
-CMD_RUNUSER="sudo /sbin/runuser -l nemo -c "
+# Get default user name
+MYUSER=`getent passwd "100000" | cut -d: -f1`
+
+CMD_RUNUSER="sudo /sbin/runuser -l $MYUSER -c "
 SPEN_APP="harbour-spen-menu"
 SPEN_APP_PATH="/usr/bin/$SPEN_APP"
 
 spenAppControl()
 {
-	#checking whether the paint app is running
-	if ps ax | grep -v grep | grep $SPEN_APP > /dev/null
+    #checking whether the paint app is running
+    if ps ax | grep -v grep | grep $SPEN_APP > /dev/null
+    then
+    #if running
+	#if parameter is 'S'tart
+	if [ $1 == "E" ]
 	then
-	#if running
-		#if parameter is 'S'tart
-		if [ $1 == "E" ]
-		then
-			#end it
-			killall $SPEN_APP
-		fi
-	else
-	#if not running
-		#if parameter is 'S'tart
-		if [ $1 == "S" ]
-		then
-			#start it
-			$CMD_RUNUSER $SPEN_APP_PATH &
-		fi
+	    #end it
+	    killall $SPEN_APP
 	fi
+    else
+    #if not running
+	#if parameter is 'S'tart
+	if [ $1 == "S" ]
+	then
+	    #start it
+	    $CMD_RUNUSER $SPEN_APP_PATH &
+	fi
+    fi
 }
 
 EVENT_OUT='*type 5 (EV_SW), code 19 (?), value 1*'
@@ -46,12 +49,12 @@ EVENT_BACK='*type 5 (EV_SW), code 19 (?), value 0*'
 $CMD_RUNUSER "/usr/bin/droid/evtest /dev/input/event3" | while read line; do
   case $line in
     ($EVENT_OUT)
-	#S-Pen is out
-	spenAppControl S
-	;;
+    #S-Pen is out
+    spenAppControl S
+    ;;
     ($EVENT_BACK)
-	#S-Pen is back
-	spenAppControl E
-	;;
+    #S-Pen is back
+    spenAppControl E
+    ;;
   esac
 done
