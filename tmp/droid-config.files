@@ -49,6 +49,13 @@
 /lib/udev/rules.d/997-droid-drm.rules
 /lib/udev/rules.d/998-droid-system.rules
 /usr/share/csd/settings.d/hw-settings.ini
+/usr/share/icons/hicolor/86x86/apps/harbour-sailfishpen.png
+/usr/share/harbour-spen-menu/qml/cover/CoverPage.qml
+/usr/share/harbour-spen-menu/qml/pages/Main.qml
+/usr/share/harbour-spen-menu/qml/pages/About.qml
+/usr/share/harbour-spen-menu/qml/harbour-spen-menu.qml
+/usr/share/harbour-spen-menu/translations/harbour-spen-menu.ts
+/usr/share/harbour-spen-menu/translations/harbour-spen-menu-de.ts
 /usr/share/applications/sailfish-browser-YouTube-0.desktop
 /usr/share/applications/sailfish-browser-Telegram-0.desktop
 /usr/share/applications/sailfish-browser-ProtonMail-0.desktop
@@ -90,10 +97,12 @@
 /usr/lib/systemd/system/multi-user.target.wants/wifi-fix.service
 /usr/lib/systemd/system/multi-user.target.wants/spen.service
 /usr/lib/systemd/system/spen.service
+/usr/lib/systemd/system/actdead-pre.target.wants/droid-hal-init.service
 /usr/bin/droid/wifi-tidy.sh
 /usr/bin/droid/evtest
 /usr/bin/droid/gps-fix.sh
 /usr/bin/droid/wifi-save-status.sh
+/usr/bin/droid/spen-start-service.sh
 /usr/bin/droid/lxc-scripts/debian-mouse-landscape.sh
 /usr/bin/droid/lxc-scripts/debian-mouse-portrait.sh
 /usr/bin/droid/lxc-scripts/debian.sh
@@ -101,6 +110,7 @@
 /usr/bin/droid/wifi-fix.sh
 /usr/bin/droid/wifi-getMAC.sh
 /usr/bin/logcat
+/usr/bin/harbour-spen-menu
 /usr/bin/clear
 /usr/bin/hotspot.sh
 /usr/bin/kimmoli-diyicons.sh
@@ -131,3 +141,4 @@
 /var/lib/environment/ofono/noplugin.conf
 /lib/udev/rules.d/100-wifi-on.rules
 /lib/udev/rules.d/101-wifi-off.rules
+/usr/share/ssu/features.d/adaptation-community.ini
