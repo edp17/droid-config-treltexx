@@ -100,7 +100,6 @@
 /usr/lib/systemd/system/actdead-pre.target.wants/droid-hal-init.service
 /usr/bin/droid/wifi-tidy.sh
 /usr/bin/droid/evtest
-/usr/bin/droid/gps-fix.sh
 /usr/bin/droid/wifi-save-status.sh
 /usr/bin/droid/spen-start-service.sh
 /usr/bin/droid/lxc-scripts/debian-mouse-landscape.sh

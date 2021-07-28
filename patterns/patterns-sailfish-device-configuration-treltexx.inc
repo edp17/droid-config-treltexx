@@ -23,6 +23,7 @@ Requires: libhybris-tests
 Requires: busybox-static
 Requires: openssh-server
 Requires: zypper
+Requires: gnu-bash
 Requires: psmisc-tools
 
 
@@ -55,6 +56,7 @@ Requires: jolla-settings-system-flashlight
 # install some packages
 Requires: mce-tools
 Requires: connman-tools
+Requires: yamuisplash
 
 %description -n patterns-sailfish-device-configuration-treltexx
 Pattern with packages for treltexx configurations
