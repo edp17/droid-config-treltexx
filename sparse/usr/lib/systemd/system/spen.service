@@ -1,11 +1,9 @@
 [Unit]
-Description=Start S-Pen listener
-After=connman.service
+Description=S-Pen listener
 
 [Service]
-Type=oneshot
 ExecStart=/usr/bin/droid/spen-start-service.sh
-Restart=on-error
+Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target
