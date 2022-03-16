@@ -5,5 +5,4 @@
 /etc/bluez5/bluetooth/main.conf
 /etc/pulse/xpolicy.conf.d/bluez5_earpiece.conf
 /etc/pulse/xpolicy.conf.d/bluez5.conf
-/etc/pulse/bluez5_stream_restore.pa
 /etc/bluez5/bluetooth/main.conf

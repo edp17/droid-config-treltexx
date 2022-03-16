@@ -22,6 +22,9 @@
 # We assume most devices will
 %define have_modem 1
 
+# For building 17.1
+%define android_version_major 10
+
 Provides: ofono-configs
 Obsoletes: ofono-configs-mer
 
