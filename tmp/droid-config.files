@@ -138,14 +138,13 @@
 /usr/lib/systemd/system/actdead-pre.target.wants/droid-hal-init.service
 /usr/bin/droid/wifi-tidy.sh
 /usr/bin/droid/evtest
-/usr/bin/droid/wifi-save-status.sh
 /usr/bin/droid/spen-start-service.sh
-/usr/bin/droid/lxc-scripts/debian-mouse-landscape.sh
-/usr/bin/droid/lxc-scripts/debian-mouse-portrait.sh
+/usr/bin/droid/waydroid-treltexx.sh
 /usr/bin/droid/lxc-scripts/debian.sh
+/usr/bin/droid/lxc-scripts/debian-mouse.sh
 /usr/bin/droid/spen-daemon.sh
-/usr/bin/droid/wifi-fix.sh
-/usr/bin/droid/wifi-getMAC.sh
+/usr/bin/droid/wifi-on.sh
+/usr/bin/droid/wifi.conf
 /usr/bin/logcat
 /usr/bin/harbour-spen-menu
 /usr/bin/clear
@@ -180,6 +179,4 @@
 /etc/sysconfig/connman
 /var/lib/environment/compositor/droid-hal-device.conf
 /var/lib/environment/ofono/noplugin.conf
-/lib/udev/rules.d/100-wifi-on.rules
-/lib/udev/rules.d/101-wifi-off.rules
 /usr/share/ssu/features.d/adaptation-community.ini

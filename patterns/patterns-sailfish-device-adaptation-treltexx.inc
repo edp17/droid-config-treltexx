@@ -34,6 +34,8 @@ Requires: pulseaudio-modules-droid-hidl
 # to fix non-responding Camera app and/or voice during a phone call:
 #Requires: audiosystem-passthrough-dummy-af
 
+Obsoletes: audioflingerglue
+
 # for audio recording to work:
 Requires: qt5-qtmultimedia-plugin-mediaservice-gstmediacapture
 
