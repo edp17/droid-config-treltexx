@@ -14,4 +14,4 @@
 #
 
 # Start S-Pen listener service
-/sbin/runuser -l `getent passwd "100000" | cut -d: -f1` -c /usr/bin/droid/spen-daemon.sh
+/sbin/runuser -l `getent passwd "100000" | cut -d: -f1` -c /usr/bin/droid/spen-daemon.sh &

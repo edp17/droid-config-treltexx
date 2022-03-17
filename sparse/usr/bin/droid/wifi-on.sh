@@ -72,18 +72,18 @@ echo "turn-wifi.sh script - START"
     echo "Passphrase is ok"
   fi
   
-  lastAddress=`cat $CONNMANPATH/$newDir/settings | grep IPv4.DHCP.LastAddress`
-  if [ -z "$lastAddress" ]
-  then
-    echo "IPv4.DHCP.LastAddress=$LASTADDRESS" >> $CONNMANPATH/$newDir/settings
-  else
-    echo "LastAddress is ok"
-  fi
+#  lastAddress=`cat $CONNMANPATH/$newDir/settings | grep IPv4.DHCP.LastAddress`
+#  if [ -z "$lastAddress" ]
+#  then
+#    echo "IPv4.DHCP.LastAddress=$LASTADDRESS" >> $CONNMANPATH/$newDir/settings
+#  else
+#    echo "LastAddress is ok"
+#  fi
   sleep 3
   
   echo "Wifi turned back ON"
-  echo "Now connect to wifi network"
+  echo "Now connecting to wifi network"
   /usr/bin/connmanctl connect $newDir
   echo "Connected! You can start surfing on internet, enjoy! ;)"
-
+  
 echo "turn-wifi.sh script - DONE"
