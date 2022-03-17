@@ -17,11 +17,8 @@
 MYUSER=`getent passwd "100000" | cut -d: -f1`
 
 # Determine location of connman
-CONNMANPATH="/home/.system/var/lib/connman"
-if [ "$MYUSER" = "defaultuser" ]
-then
-  CONNMANPATH="/home/$MYUSER/.local/share/system/privileged/connman"
-fi
+# From SFOS4.1 location has permanently changed to /home/$USER/.local/share/system/privileged/connman
+CONNMANPATH="/home/$MYUSER/.local/share/system/privileged/connman"
 
 cd $CONNMANPATH
 dirCount=`ls -l | grep wifi | grep -c ^d`

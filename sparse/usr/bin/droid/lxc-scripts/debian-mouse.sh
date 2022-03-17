@@ -12,11 +12,15 @@
 #  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 #  GNU General Public License for more details.
 #
+#  Parameters: $1 - container name
+#              $2 - p -portrait
+#                   l -landscape
+#
 
 if [[ $1 != "" ]]; then
   echo "Step 1."
   echo "Checking the container $1..."
-  if ps ax | grep -v grep | grep lxc-start > /dev/null
+  if ps ax | grep -v grep | grep "lxc-start -n Debian" > /dev/null
   then
       echo "The container $1 is running..."
   else
@@ -28,8 +32,12 @@ if [[ $1 != "" ]]; then
       echo "Step 1. Done"
   fi
   echo "Step 2."
-  echo "Starting qxdisplay as defaultuser..."
-  `/usr/bin/qxcompositor -o portrait --wayland-socket-name "../../display/wayland-container-0"` &
+  echo "Starting qxdisplay as user..."
+  if [[ $2 = "l" ]]; then
+    `/usr/bin/qxcompositor --wayland-socket-name "../../display/wayland-container-0"` &
+  else
+    `/usr/bin/qxcompositor -o portrait --wayland-socket-name "../../display/wayland-container-0"` &
+  fi
   sleep 2
   echo "Attach the container $1 as root..."
   sudo lxc-attach -n $1 -- /mnt/guest/start_desktop.sh 0 &
