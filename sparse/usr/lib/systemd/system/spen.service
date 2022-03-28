@@ -1,9 +1,0 @@
-[Unit]
-Description=S-Pen listener
-
-[Service]
-ExecStart=/usr/bin/droid/spen-start-service.sh
-Restart=on-failure
-
-[Install]
-WantedBy=multi-user.target
