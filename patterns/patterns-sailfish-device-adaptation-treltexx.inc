@@ -68,7 +68,7 @@ Requires: jolla-devicelock-daemon-encsfa
 #Requires: sailfish-device-encryption
 
 # For GPS
-Requires: geoclue-provider-hybris
+Requires: geoclue-provider-hybris-hal
 
 # For Bluetooth
 Requires: bluetooth-rfkill-event-hciattach
