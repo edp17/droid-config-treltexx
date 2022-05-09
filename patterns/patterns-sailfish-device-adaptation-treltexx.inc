@@ -74,6 +74,9 @@ Requires: geoclue-provider-hybris
 Requires: bluetooth-rfkill-event-hciattach
 Requires: broadcom-bluetooth-bluez5
 
+# Telephony (RIL sockets)
+Requires: ofono-ril-plugin
+
 # For FM radio on some QCOM devices
 #Requires: qt5-qtmultimedia-plugin-mediaservice-irisradio
 #Requires: jolla-mediaplayer-radio
