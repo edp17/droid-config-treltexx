@@ -17,7 +17,7 @@ Requires: libhybris-libGLESv2
 Requires: libhybris-libwayland-egl
 
 # Sensors
-Requires: hybris-libsensorfw-qt5
+Requires: hybris-libsensorfw-qt5-hal
 
 # Vibra
 Requires: ngfd-plugin-native-vibrator
