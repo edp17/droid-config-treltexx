@@ -56,7 +56,10 @@ Requires: gmp-droid
 Requires: mce-plugin-libhybris
 
 # USB mode controller
+# Enables mode selector upon plugging USB cable:
 Requires: usb-moded
+Requires: usb-moded-defaults-android
+Requires: usb-moded-developer-mode-android
 
 # hammerhead, grouper, and maguro use this in scripts, so include for all
 Requires: rfkill
