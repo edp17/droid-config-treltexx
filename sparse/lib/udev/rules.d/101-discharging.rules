@@ -1,3 +1,3 @@
 # edp17 - Detect when cable removed
 
-ACTION=="change", SUBSYSTEM=="power_supply", ATTR{status}=="Discharging", RUN+="/usr/bin/droid/discharging.sh"
+ACTION=="change", SUBSYSTEM=="power_supply", ATTR{online}=="1", RUN+="/usr/bin/droid/discharging.sh"
